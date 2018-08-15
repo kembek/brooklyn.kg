@@ -1,0 +1,9 @@
+{
+  "easycompile.less": {
+      "compress": true,
+      "sourceMap": true,
+      "autoprefixer": "last 5 versions",
+      "out": "./",
+      "outExt": ".css"
+  },
+}

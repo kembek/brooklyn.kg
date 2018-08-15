@@ -1,0 +1,38 @@
+{
+  "name": "invest-time.kg",
+  "version": "1.0.0",
+  "description": "Brooklyn Bridge Site",
+  "author": "Evald Smalyakov",
+  "private": true,
+  "scripts": {
+    "serve:dev": "npm run dev",
+    "dev": "nodemon --watch app --watch bootstrap --watch config --watch start --watch .env -x node server.js",
+    "build": "node ./ace nuxtbuild",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@adonisjs/ace": "^4.0.7",
+    "@adonisjs/auth": "^2.0.10",
+    "@adonisjs/bodyparser": "^1.0.8",
+    "@adonisjs/cors": "^1.0.2",
+    "@adonisjs/fold": "^4.0.5",
+    "@adonisjs/framework": "^4.0.27",
+    "@adonisjs/ignitor": "^1.0.14",
+    "@adonisjs/lucid": "^4.0.22",
+    "@adonisjs/session": "^1.0.19",
+    "@adonisjs/shield": "^1.0.4",
+    "@nuxtjs/axios": "^5.0.0",
+    "adonis-swagger": "^1.2.7",
+    "nuxt": "^1.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0",
+    "nodemon": "^1.11.0"
+  }
+}
