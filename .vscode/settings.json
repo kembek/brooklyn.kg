@@ -1,9 +1,26 @@
 {
+  "easycompile.compile": {
+  "minifyJsOnSave": false,
+  "minifyCssOnSave": false
+},
   "easycompile.less": {
-      "compress": true,
-      "sourceMap": true,
-      "autoprefixer": "last 5 versions",
-      "out": "./",
-      "outExt": ".css"
+    "compress": true,
+    "sourceMap": true,
+    "autoprefixer": "last 5 versions",
+    "out": "./",
+    "outExt": ".min.css"
+  },
+  "easycompile.js": {
+    "compress": true,
+    "sourceMap": true,
+    "out": "./",
+    "outExt": ".min.js"
+  },
+  "easycompile.sass": {
+    "compress": true,
+    "sourceMap": true,
+    "autoprefixer": "last 5 versions",
+    "out": "./",
+    "outExt": ".min.css"
   },
 }

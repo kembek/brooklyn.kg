@@ -25,7 +25,7 @@ module.exports = {
   | are signed and encrypted.
   |
   */
-  cookieName: 'invest-time.kg',
+  cookieName: 'brooklyn.kg',
 
   /*
   |--------------------------------------------------------------------------

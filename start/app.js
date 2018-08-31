@@ -1,5 +1,6 @@
 'use strict'
 
+const Helpers = use('Helpers')
 /*
 |--------------------------------------------------------------------------
 | Providers
@@ -19,7 +20,12 @@ const providers = [
   '@adonisjs/shield/providers/ShieldProvider',
   '@adonisjs/session/providers/SessionProvider',
   '@adonisjs/auth/providers/AuthProvider',
-  'adonis-swagger/providers/SwaggerProvider'
+  '@adonisjs/validator/providers/ValidatorProvider',
+  '@adonisjs/drive/providers/DriveProvider',
+  'adonis-swagger/providers/SwaggerProvider',
+  'adonis-search/providers/QueryProvider',
+  Helpers.appRoot('app/Providers/ExtendResponseProvider'),
+  Helpers.appRoot('app/Providers/ExtendErrorResponseProvider')
 ]
 
 /*
@@ -61,4 +67,9 @@ const commands = [
   'App/Commands/NuxtBuild'
 ]
 
-module.exports = { providers, aceProviders, aliases, commands }
+module.exports = {
+  providers,
+  aceProviders,
+  aliases,
+  commands
+}

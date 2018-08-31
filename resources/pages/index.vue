@@ -1,59 +1,90 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        invest-time.kg
-      </h1>
-      <h2 class="subtitle">
-        Invest Time Company
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div class="container">
+    <section class="main">
+      <Logo />
+      <h1>Языковые курсы и агенство трудоустройства</h1>
+      <p v-scroll-to="'.develop'" class="scroll">
+        Подробнее
+        <span><i class="fa fa-angle-down"/></span>
+      </p>
+    </section>
+    <section class="develop">
+      <h2>Сайт находится на стадии разработки...</h2>
+    </section>
+  </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
+<script lang="ts">
+  import {
+    Component,
+    Vue
+  } from "nuxt-property-decorator";
 
-export default {
-  components: {
-    Logo
-  }
-}
+  import Logo from "~/assets/svg/logo.svg";
+
+  @Component({
+    components: {
+      Logo
+    }
+  })
+  export default class MainPage extends Vue {}
 </script>
 
-<style>
-.container
-{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
-}
+<style lang="less">
+  @import "~assets/themes/index.less";
+  .page {
+    &.container {
+      height: 100vh;
+      section.main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p {}
+        .scroll {
+          color: @c-font;
+          font-size: 20px;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          position: absolute;
+          bottom: 0;
+          span {
+            font-size: 50px;
+            overflow: hidden;
+            i {
+              animation: to-down 2s infinite ease-in-out;
+            }
+          }
+          &:hover {
+            transform: scale(1.1)
+          }
+        }
+        svg {
+          width: 50vw;
+        }
+        h1 {
+          font-size: 200%;
+          text-align: center;
+          color: @c-font;
+        }
+      }
+    }
+  }
+
+  @keyframes to-down {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 </style>
