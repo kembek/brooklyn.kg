@@ -43,19 +43,19 @@
 
     items: object[] = [{
         title: "Курсы",
-        link: "/courses/"
+        link: "/ru/courses/"
       },
       {
         title: "Агенство",
-        link: "/agency/"
+        link: "/ru/agency/"
       },
       {
         title: "Приложение",
-        link: "/application/"
+        link: "/ru/application/"
       },
       {
         title: "О нас",
-        link: "/about/"
+        link: "/ru/about/"
       }
     ];
   }

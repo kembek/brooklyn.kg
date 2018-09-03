@@ -1,0 +1,22 @@
+definitions:
+  Menu:
+    type: object
+    properties:
+      parent_id:
+        type: integer
+      title:
+        type: string
+        minLength: 5
+        maxLength: 255
+        unique: true
+      link:
+        type: string
+      image:
+        type: string
+      sort:
+        type: integer
+        minimum: 0
+      is_local:
+        type: boolean
+      is_status:
+        type: boolean

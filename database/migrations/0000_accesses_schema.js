@@ -16,16 +16,13 @@ class AccessSchema extends Schema {
       table.string('categories', 4).notNullable().defaultTo('0000')
       table.string('translates', 4).notNullable().defaultTo('0000')
       table.string('langs', 4).notNullable().defaultTo('0000')
-      table.string('access', 4).notNullable().defaultTo('0000')
+      table.string('accesses', 4).notNullable().defaultTo('0000')
       table.string('groups', 4).notNullable().defaultTo('0000')
       table.timestamps()
     })
   }
 
   down() {
-    // this.alter('accesses', (table) => {
-    //   table.dropForeign('access')
-    // })
 
     this.drop('accesses')
   }

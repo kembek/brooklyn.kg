@@ -3,7 +3,7 @@
     Component
   } from "nuxt-property-decorator";
 
-  import MainPage from '~/pages/index.vue'
+     import MainPage from '~/pages/_lang/index.vue'
 
   @Component({})
   export default class Page extends MainPage {

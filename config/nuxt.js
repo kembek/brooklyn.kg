@@ -5,9 +5,12 @@ const settings = require("../resources/settings");
 
 module.exports = {
   mode: 'universal',
-
+  dev: (process.env.NODE_ENV !== 'production'),
+  cache: true,
+  router: {
+    middleware: 'i18n'
+  },
   srcDir: resolve(__dirname, '..', 'resources'),
-
   /*
    ** Headers of the page
    */
@@ -19,7 +22,7 @@ module.exports = {
     background_color: "#242323",
     display: "standalone",
     orientation: "portrait",
-    lang: "ru",
+    // lang: "ru",
     start_url: "/"
   },
   head: {
@@ -65,11 +68,11 @@ module.exports = {
         property: "og:url",
         content: "https://terminator.kg"
       },
-      {
-        hid: "og:locale",
-        property: "og:locale",
-        content: "ru_RU"
-      },
+      // {
+      //   hid: "og:locale",
+      //   property: "og:locale",
+      //   content: "ru_RU"
+      // },
       {
         hid: "og:image",
         property: "og:image",
@@ -108,7 +111,9 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{
+  plugins: [
+    "~/plugins/i18n",
+    {
       src: "~/plugins/vue-carousel",
       ssr: false
     },
@@ -124,11 +129,11 @@ module.exports = {
       src: "~/plugins/vue-slider-component",
       ssr: false
     },
-    // {
-    //   src: "~/plugins/localStorage.js",
-    //   ssr: false
-    // },
-    "~/plugins/vue-social-sharing"
+    {
+      src: "~/plugins/localStorage.js",
+      ssr: false
+    },
+    "~/plugins/vue-social-sharing",
   ],
 
   /*

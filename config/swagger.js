@@ -40,9 +40,10 @@ module.exports = {
 
   // Path to the API docs
   // Sample usage
-  // apis: [
-  //    'docs/**/*.yml',    // load recursive all .yml file in docs directory
-  //    'docs/**/*.js',     // load recursive all .js file in docs directory
-  // ]
-  apis: []
+  apis: [
+     'docs/**/*.yaml',    // load recursive all .yaml file in docs directory
+     'docs/**/*.yml',    // load recursive all .yml file in docs directory
+     'docs/**/*.js',     // load recursive all .js file in docs directory
+  ]
+  // apis: []
 }

@@ -19,7 +19,10 @@
     ]
   },
   "autoload": {
-    "App": "./app"
+    "App": "./app",
+    "MODELS": "./app/Models",
+    "AUTHS": "./app/Models/Auths",
+    "SETTINGS": "./app/Models/Settings"
   },
   "dependencies": {
     "@adonisjs/ace": "^5.0.1",
@@ -52,6 +55,7 @@
     "lodash": "^4.17.10",
     "mysql": "^2.15.0",
     "nuxt": "^1.4.1",
+    "nuxt-i18n": "^5.2.1",
     "nuxt-property-decorator": "^1.2.0",
     "nuxt-robots-module": "^1.2.0",
     "require-all": "^2.2.0",
@@ -59,6 +63,7 @@
     "swagger-jsdoc": "^1.9.7",
     "sweetalert2": "^7.19.1",
     "vue-carousel": "^0.7.2",
+    "vue-i18n": "^8.0.0",
     "vue-notifications": "^0.9.0",
     "vue-scrollto": "^2.11.0",
     "vue-slider-component": "^2.6.2",
@@ -69,6 +74,7 @@
   },
   "devDependencies": {
     "@types/node": "^9.4.6",
+    "@types/vue-i18n": "^7.0.0",
     "babel-eslint": "^7.1.1",
     "cross-env": "^5.2.0",
     "eslint": "^3.13.1",

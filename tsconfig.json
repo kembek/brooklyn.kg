@@ -16,5 +16,9 @@
     "paths": {
       "~/*": ["./resources/*"]
     }
-  }
+  },
+  "files": [
+    "index.d.ts",
+    "i18n.d.ts"
+  ]
 }

@@ -8,7 +8,7 @@ class CategoriesSchema extends Schema {
       table.increments()
       table.string('title', 80).notNullable()
       table.text('description', 'longtext')
-      table.integer('parent_id', 10).unsigned()
+      table.integer('parent_id', 10).defaultTo(null).unsigned().references('id').inTable('categories')
       table.timestamps()
     })
   }

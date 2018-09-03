@@ -8,7 +8,7 @@ class UsersSchema extends Schema {
       table.increments()
       table.string('email', 80).notNullable().unique()
       table.string('phone', 20).notNullable().unique()
-      table.integer('access_id', 10).unsigned()
+      table.integer('access_id', 10).notNullable().unsigned().references('id').inTable('accesses')
       table.string('password', 60).notNullable()
       table.string('surname', 60).notNullable()
       table.string('first_name', 60).notNullable()

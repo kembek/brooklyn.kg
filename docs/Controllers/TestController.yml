@@ -1,0 +1,22 @@
+/hello:
+  get:
+    tags:
+      - Test
+    description: Test
+    produces:
+      - application/json
+      - multipart/form-data
+    parameters:
+      - name: name
+        description: Your name
+        in: query
+        required: false
+        type: string
+    responses:
+      200:
+        description: Success
+        example:
+          message: Hello guest
+
+
+
