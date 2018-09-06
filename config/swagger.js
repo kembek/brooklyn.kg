@@ -12,38 +12,38 @@ module.exports = {
   // enable or disable route '/swagger.json'
   enable: true,
 
-  title: 'API Documentations',
+  title: 'API Documentations v1',
   version: '1.0.0',
-  basePath: '/api/',
+  basePath: '/api/v1/',
 
   // security definition config
-  securityDefinitions: {
-    ApiKey: {
-      description: 'ApiKey description',
-      name: 'Authorization'
-    },
+  // securityDefinitions: {
+  //   ApiKey: {
+  //     description: 'ApiKey description',
+  //     name: 'Authorization'
+  //   },
 
-    // OAuth2 configuration
-    OAuth2: {
-      authorizationUrl: 'https://example.com/oauth/authorize',
-      tokenUrl: 'https://example.com/oauth/token',
+  //   // OAuth2 configuration
+  //   OAuth2: {
+  //     authorizationUrl: 'https://example.com/oauth/authorize',
+  //     tokenUrl: 'https://example.com/oauth/token',
 
-      // define your scopes here
-      // remove read, write and admin if not necessary
-      scopes: {
-        read: 'Grants read access (this is just sample)',
-        write: 'Grants write access (this is just sample)',
-        admin: 'Grants read and write access to administrative information (this is just sample)'
-      }
-    },
-  },
+  //     // define your scopes here
+  //     // remove read, write and admin if not necessary
+  //     scopes: {
+  //       read: 'Grants read access (this is just sample)',
+  //       write: 'Grants write access (this is just sample)',
+  //       admin: 'Grants read and write access to administrative information (this is just sample)'
+  //     }
+  //   },
+  // },
 
   // Path to the API docs
   // Sample usage
   apis: [
-     'docs/**/*.yaml',    // load recursive all .yaml file in docs directory
-     'docs/**/*.yml',    // load recursive all .yml file in docs directory
-     'docs/**/*.js',     // load recursive all .js file in docs directory
+     'docs/v1/**/*.yaml',    // load recursive all .yaml file in docs directory
+     'docs/v1/**/*.yml',    // load recursive all .yml file in docs directory
+     'docs/v1/**/*.js',     // load recursive all .js file in docs directory
   ]
   // apis: []
 }

@@ -1,6 +1,7 @@
 "use strict";
 const resolve = require('path').resolve;
 const settings = require("../resources/settings");
+const nodeExternals = require('webpack-node-externals')
 
 
 module.exports = {
@@ -106,7 +107,30 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ["~assets/clear.min.css"],
+  css: [
+    'vuetify/src/stylus/main.styl',
+    "~assets/clear.min.css",
+    "~assets/MaterialIcons/material-icons.css"
+  ],
+
+  /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy',
+    "~/modules/typescript.js",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/pwa",
+    "@nuxtjs/font-awesome",
+    // [
+    //   "@nuxtjs/google-analytics",
+    //   {
+    //     id: "UA-"
+    //   }
+    // ],
+  ],
 
   /*
    ** Plugins to load before mounting the App
@@ -133,31 +157,36 @@ module.exports = {
       src: "~/plugins/localStorage.js",
       ssr: false
     },
+    {
+      src: '~/plugins/vue-editor',
+      ssr: false
+    },
     "~/plugins/vue-social-sharing",
-  ],
-
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
-    "~/modules/typescript.js",
-    "@nuxtjs/sitemap",
-    "@nuxtjs/pwa",
-    "@nuxtjs/font-awesome",
-    // [
-    //   "@nuxtjs/google-analytics",
-    //   {
-    //     id: "UA-"
-    //   }
-    // ],
+    '~/plugins/vuetify',
+    {
+      src: '~/plugins/image-compressor',
+      ssr: false
+    },
+    '~/components/'
   ],
   /*
    ** Axios module configuration
    */
   axios: {
+    baseURL: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}/api`,
+    browserBaseURL: '/api',
+    proxy: true,
+    debug: true
     // See https://github.com/nuxt-community/axios-module#options
+  },
+  proxy: {
+    // Simple proxy
+    '/api/': {
+      target: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}`,
+      pathRewrite: {
+        '^/api/': '/api/v1/'
+      }
+    },
   },
   workbox: {
     runtimeCaching: [{
@@ -179,11 +208,18 @@ module.exports = {
    */
   build: {
     // analyze: true,
-    vendor: ["vue-notifications", "vue-carousel"],
-    extend(config) {
+    vendor: ["vue-notifications", "vue-carousel", 'image-compressor.js', 'vue2-editor'],
+    extend(config, ctx) {
       const urlLoader = config.module.rules.find(
         rule => rule.loader === "url-loader"
       );
+      if (ctx.isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vuetify/]
+          })
+        ]
+      }
       urlLoader.test = /\.(png|jpe?g|gif)$/;
       config.module.rules.push({
         test: /\.svg$/,

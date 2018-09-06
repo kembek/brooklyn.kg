@@ -42,7 +42,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        p {}
         .scroll {
           color: @c-font;
           font-size: 20px;

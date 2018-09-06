@@ -10,17 +10,18 @@ export default ({
   store,
   params
 }) => {
-  store.state.locales.map(({
+  store.getters['Lang/lang'].locales.map(({
     code
   }) => {
     m[`${code}`] = require(`~/locales/${code}-${code.toUpperCase()}.json`)
   })
 
   app.i18n = new VueI18n({
-    locale: store.state.locale,
-    fallbackLocale: params.lang || 'ru',
+    locale: store.getters['Lang/lang'].locale,
+    fallbackLocale: params.lang || store.getters['Lang/lang'].locale || "ru",
     messages: m
   })
+  store.dispatch("Lang/SetLocale", app.i18n.fallbackLocale);
 
   app.i18n.path = (link) => {
     if (app.i18n.locale === app.i18n.fallbackLocale) {

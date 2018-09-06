@@ -1,10 +1,12 @@
 import createPersistedState from 'vuex-persistedstate'
 
-export default ({store}) => {
+export default ({
+  store
+}) => {
   createPersistedState(
-    {
-      key: 'lang',
-      paths: ['index']
+  {
+    key: 'Lang',
+    paths: ['Lang']
   }
 )(store)
 }

@@ -15,8 +15,6 @@
 
 const Route = use('Route')
 
-Route.group(() => {
-  use('require-all')(`${use('Helpers').appRoot()}/start/api`)
-}).prefix('api')
+use('require-all')(`${use('Helpers').appRoot()}/start/api`)
 
 Route.any('*', 'NuxtController.render')
