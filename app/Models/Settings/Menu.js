@@ -1,6 +1,6 @@
 'use strict'
 
-const BasicSecond = use('MODELS/BasicSecond')
+const BasicSecond = use('Models/BasicSecond')
 
 
 class Menu extends BasicSecond {
@@ -9,7 +9,7 @@ class Menu extends BasicSecond {
     }
 
     parent() {
-        return this.belongsTo('SETTINGS/Menu', 'parent_id', 'id')
+        return this.belongsTo('Settings/Menu', 'parent_id', 'id')
     }
 
 }

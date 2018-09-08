@@ -1,8 +1,8 @@
 'use strict'
 
 const Hash = use('Hash')
-const User = use('AUTHS/User')
-const Accesses = use('AUTHS/Accesses')
+const User = use('Auths/User')
+const Accesses = use('Auths/Accesses')
 
 class UserController {
   async login({

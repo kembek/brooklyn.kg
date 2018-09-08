@@ -4,9 +4,13 @@ export default ({
   store
 }) => {
   createPersistedState(
-  {
-    key: 'Lang',
-    paths: ['Lang']
-  }
+    {
+      key: 'Lang',
+      paths: ['Lang']
+    },
+    {
+      key: 'User',
+      paths: ['User']
+    }
 )(store)
 }

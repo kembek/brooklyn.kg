@@ -1,0 +1,11 @@
+/tasks/all/:
+  get:
+    tags:
+      - Tasks
+    description: Getting all tasks
+    responses:
+      200:
+        description: Success
+      403:
+        description: Error
+

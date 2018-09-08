@@ -1,8 +1,8 @@
 <template>
-  <div class="broklyn">
+  <v-app dark class="broklyn">
     <my-header />
     <nuxt class="page" />
-  </div>
+  </v-app>
 </template>
 
 <script lang="ts">

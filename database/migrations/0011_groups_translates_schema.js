@@ -6,8 +6,9 @@ class GroupsTranslatesSchema extends Schema {
   up () {
     this.create('groups_translates', (table) => {
       table.unique(['group_id', 'translate_id'])
-      table.integer('group_id', 10).notNullable().unsigned().references('id').inTable('groups')
-      table.integer('translate_id', 10).notNullable().unsigned().references('id').inTable('translates')
+      table.increments()
+      table.integer('group_id', 10).notNullable().unsigned().references('id').inTable('groups_students').onDelete('CASCADE').onUpdate('CASCADE')
+      table.integer('translate_id', 10).notNullable().unsigned().references('id').inTable('translates').onDelete('CASCADE').onUpdate('CASCADE')
     })
   }
 

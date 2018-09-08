@@ -1,6 +1,6 @@
 'use strict'
 
-const BasicSecond = use('MODELS/BasicSecond')
+const BasicSecond = use('Models/BasicSecond')
 
 
 class Accesses extends BasicSecond {
@@ -9,7 +9,7 @@ class Accesses extends BasicSecond {
     }
 
     users() {
-        return this.hasMany('AUTHS/User', 'id', 'access_id')
+        return this.hasMany('Auths/User', 'id', 'access_id')
     }
 
 }

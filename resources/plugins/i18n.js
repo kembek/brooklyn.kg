@@ -10,7 +10,7 @@ export default ({
   store,
   params
 }) => {
-  store.getters['Lang/lang'].locales.map(({
+  store.getters['Lang/lang'].locales.forEach(({
     code
   }) => {
     m[`${code}`] = require(`~/locales/${code}-${code.toUpperCase()}.json`)

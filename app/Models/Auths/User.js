@@ -1,6 +1,6 @@
 'use strict'
 
-const BasicSecond = use('MODELS/BasicSecond')
+const BasicSecond = use('Models/BasicSecond')
 class User extends BasicSecond {
   static boot() {
     super.boot()
@@ -10,13 +10,13 @@ class User extends BasicSecond {
   static get hidden() {
     return ['password']
   }
-  
+
   users() {
-    return this.hasOne('AUTHS/Accesses', 'access_id', 'id')
+    return this.hasOne('Auths/Accesses', 'access_id', 'id')
   }
 
   tokens() {
-    return this.hasMany('AUTHS/Token')
+    return this.hasMany('Auths/Token')
   }
 }
 

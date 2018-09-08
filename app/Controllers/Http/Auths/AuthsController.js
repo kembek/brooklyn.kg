@@ -1,7 +1,7 @@
 'use strict'
 
-const User = use('AUTHS/User')
-const Accesses = use('AUTHS/Accesses')
+const User = use('Auths/User')
+const Accesses = use('Auths/Accesses')
 
 class UserController {
   async login({
@@ -46,7 +46,7 @@ class UserController {
       if (user.is_status) {
         let access = await Accesses.query().where({
           id: user.access_id
-        })
+        }).select('title', 'description')
 
         return response.apiCollection({
           id: user.id,

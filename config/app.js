@@ -185,7 +185,7 @@ module.exports = {
     */
     console: {
       driver: 'console',
-      name: 'brooklyn.kg',
+      name: 'adonis-app',
       level: 'info'
     },
 
@@ -202,8 +202,8 @@ module.exports = {
     */
     file: {
       driver: 'file',
-      name: 'brooklyn.kg',
-      filename: 'brooklyn.kg.log',
+      name: 'adonis-app',
+      filename: 'adonis.log',
       level: 'info'
     }
   }

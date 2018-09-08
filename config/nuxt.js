@@ -11,7 +11,6 @@ module.exports = {
   router: {
     middleware: 'i18n'
   },
-  srcDir: resolve(__dirname, '..', 'resources'),
   /*
    ** Headers of the page
    */
@@ -109,7 +108,9 @@ module.exports = {
    */
   css: [
     'vuetify/src/stylus/main.styl',
+    '~/assets/main.min.css',
     "~assets/clear.min.css",
+    '~/assets/css/all.css',
     "~assets/MaterialIcons/material-icons.css"
   ],
 
@@ -119,11 +120,10 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
+    // '@nuxtjs/proxy',
     "~/modules/typescript.js",
     "@nuxtjs/sitemap",
     "@nuxtjs/pwa",
-    "@nuxtjs/font-awesome",
     // [
     //   "@nuxtjs/google-analytics",
     //   {
@@ -173,21 +173,21 @@ module.exports = {
    ** Axios module configuration
    */
   axios: {
-    baseURL: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}/api`,
-    browserBaseURL: '/api',
-    proxy: true,
-    debug: true
+    baseURL: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}/api/v1`,
+    browserBaseURL: '/api/v1',
+    proxy: false,
+    debug: false
     // See https://github.com/nuxt-community/axios-module#options
   },
-  proxy: {
-    // Simple proxy
-    '/api/': {
-      target: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}`,
-      pathRewrite: {
-        '^/api/': '/api/v1/'
-      }
-    },
-  },
+  // proxy: {
+  //   // Simple proxy
+  //   '/api/': {
+  //     target: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}`,
+  //     pathRewrite: {
+  //       '^/api/': '/api/v1/'
+  //     }
+  //   },
+  // },
   workbox: {
     runtimeCaching: [{
       urlPattern: "https://brooklyn.kg/*",
@@ -237,5 +237,6 @@ module.exports = {
         }
       });
     }
-  }
+  },
+  srcDir: resolve(__dirname, '..', 'resources')
 }

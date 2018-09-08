@@ -1,0 +1,13 @@
+/translates/all/:
+  get:
+    tags:
+      - Translates
+    description: Get all translates
+    responses:
+      200:
+        description: Success
+      403:
+        description: Error
+
+
+

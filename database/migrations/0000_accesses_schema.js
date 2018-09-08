@@ -17,7 +17,7 @@ class AccessSchema extends Schema {
       table.string('translates', 4).notNullable().defaultTo('0000')
       table.string('langs', 4).notNullable().defaultTo('0000')
       table.string('accesses', 4).notNullable().defaultTo('0000')
-      table.string('groups', 4).notNullable().defaultTo('0000')
+      table.string('groups_students', 4).notNullable().defaultTo('0000')
       table.timestamps()
     })
   }

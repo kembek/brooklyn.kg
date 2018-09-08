@@ -17,4 +17,5 @@ const Route = use('Route')
 
 use('require-all')(`${use('Helpers').appRoot()}/start/api`)
 
+
 Route.any('*', 'NuxtController.render')
