@@ -108,7 +108,7 @@ module.exports = {
    */
   css: [
     'vuetify/src/stylus/main.styl',
-    '~/assets/main.min.css',
+    '~/assets/main.less',
     "~assets/clear.min.css",
     '~/assets/css/all.css',
     "~assets/MaterialIcons/material-icons.css"

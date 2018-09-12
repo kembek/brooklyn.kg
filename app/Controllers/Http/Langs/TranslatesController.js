@@ -2,7 +2,7 @@
 
 const Translates = use('Langs/Translates')
 
-class TranslateController {
+class TranslatesController {
 
   async all({
     response
@@ -11,9 +11,10 @@ class TranslateController {
       const translates = await Translates.query().with('text').with('translate').fetch()
       return response.apiSuccess(translates)
     } catch (error) {
-      return response.apiForbidden()
+      Translates.exceptions(error.message, error.status, error.code)
+      return response.apiError();
     }
   }
 }
 
-module.exports = TranslateController
+module.exports = TranslatesController

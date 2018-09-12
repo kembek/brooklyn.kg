@@ -4,6 +4,7 @@ const Route = use('Route')
 
 Route.group(() => {
 
-  Route.get('/all/', 'Langs/TranslateController.all')
+  Route.post('/', 'Langs/LangsController.create')
+  Route.get('/all/', 'Langs/LangsController.all')
 
-}).prefix('/api/v1/translates')
+}).prefix('/api/v1/langs')

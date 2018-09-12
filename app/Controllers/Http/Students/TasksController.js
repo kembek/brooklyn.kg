@@ -22,6 +22,7 @@ class TaskController {
       const translates = await Tasks.query().with('categories').with('translates').fetch()
       return response.apiSuccess(translates)
     } catch (error) {
+      Tasks.exceptions(error.message, error.status, error.code)
       return response.apiError()
     }
   }
@@ -35,6 +36,7 @@ class TaskController {
       const translates = await Tasks.create(data) //.query().with('text').with('translate').fetch()
       return response.apiCreated(translates)
     } catch (error) {
+      Tasks.exceptions(error.message, error.status, error.code)
       return response.apiError()
     }
   }
@@ -51,6 +53,7 @@ class TaskController {
       await tasks.save()
       return response.apiUpdated(tasks)
     } catch (error) {
+      Tasks.exceptions(error.message, error.status, error.code)
       return response.apiError()
     }
   }
@@ -64,7 +67,7 @@ class TaskController {
       await tasks.delete()
       return response.apiDeleted()
     } catch (error) {
-      new Product().exceptions(error.message, error.status, error.code)
+      Tasks.exceptions(error.message, error.status, error.code)
       return response.apiError()
     }
   }

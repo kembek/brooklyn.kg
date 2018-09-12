@@ -70,6 +70,7 @@ class UserController {
         return response.apiForbidden()
       }
     } catch (error) {
+      User.exceptions(error.message, error.status, error.code)
       return response.apiForbidden()
     }
 
@@ -83,6 +84,7 @@ class UserController {
       if (await auth.check())
         return response.apiSuccess(await auth.logout())
     } catch (error) {
+      User.exceptions(error.message, error.status, error.code)
       return response.apiForbidden()
     }
   }

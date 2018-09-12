@@ -7,6 +7,8 @@ class StudentsSchema extends Schema {
     this.create('students', (table) => {
       table.increments()
       table.string('phone', 20).notNullable().unique()
+      table.string('password', 60).notNullable()
+      table.string('email', 255).defaultTo(null)
       table.string('surname', 60).notNullable()
       table.string('first_name', 60).notNullable()
       table.string('middle_name', 60).notNullable()

@@ -1,16 +1,16 @@
-/auth/:
+/auth/students/:
   post:
     tags:
-      - Authorization
-    description: User authorization
+      - Authorization students
+    description: Student authorization
     parameters:
       - name: phone
-        description: User phone
+        description: Student phone
         in: query
         required: true
         type: string
       - name: password
-        description: User password
+        description: Student password
         in: query
         required: true
         type: string
@@ -21,8 +21,8 @@
         description: Error
   get:
     tags:
-      - Authorization
-    description: Getting an authorized user
+      - Authorization students
+    description: Getting an authorized student
     responses:
       200:
         description: Success
@@ -30,8 +30,8 @@
         description: Error
   delete:
     tags:
-      - Authorization
-    description: Logout users
+      - Authorization students
+    description: Logout student
     responses:
       200:
         description: Success

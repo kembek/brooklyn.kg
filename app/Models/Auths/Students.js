@@ -12,7 +12,7 @@ class User extends BasicSecond {
   }
 
   tokens() {
-    return this.hasMany('Auths/Token')
+    return this.hasMany('Auths/TokensStudents')
   }
 }
 

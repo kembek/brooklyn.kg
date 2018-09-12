@@ -1,0 +1,32 @@
+/langs/:
+  post:
+    tags:
+      - Langs
+    description: Create lang
+    parameters:
+      - name: title
+        description: Title lang
+        in: query
+        required: true
+        type: string
+      - name: code
+        description: Code lang
+        in: query
+        required: true
+        type: string
+    responses:
+      200:
+        description: Success
+      403:
+        description: Error
+/langs/all/:
+  get:
+    tags:
+      - Langs
+    description: Get all langs
+    responses:
+      200:
+        description: Success
+      403:
+        description: Error
+

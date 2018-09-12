@@ -1,9 +1,8 @@
 'use strict'
 
-const User = use('Auths/User')
-const Accesses = use('Auths/Accesses')
+const User = use('Auths/Students')
 
-class UserController {
+class AuthsStudentsController {
   async login({
     request,
     auth,
@@ -13,15 +12,16 @@ class UserController {
       phone,
       password
     } = request.only(['phone', 'password'])
+    const jwt = auth.authenticator('jwt')
 
     try {
-      const user = await auth.getUser()
+      const user = await jwt.getUser()
       if (user.is_status) {
         return response.apiSuccess(user)
       }
     } catch (error) {
       try {
-        const user = await auth.attempt(phone, password)
+        const user = await jwt.attempt(phone, password)
 
         if (user.is_status) {
           return response.apiSuccess(user)
@@ -41,13 +41,11 @@ class UserController {
     auth,
     response
   }) {
+    const jwt = auth.authenticator('jwt')
+
     try {
-      const user = await auth.getUser()
+      const user = await jwt.getUser()
       if (user.is_status) {
-        let access = await Accesses.query().where({
-          id: user.access_id
-        }).select('title', 'description')
-        console.log(access)
         return response.apiCollection({
           id: user.id,
           access_id: user.access_id,
@@ -58,14 +56,10 @@ class UserController {
           email: user.email,
           description: user.description,
           max_groups: user.max_groups,
-          is_status: user.is_status,
-          access: {
-            title: access[0].title,
-            description: access[0].description
-          }
+          is_status: user.is_status
         })
       } else {
-        await auth.logout()
+        await jwt.logout()
         return response.apiForbidden()
       }
     } catch (error) {
@@ -79,9 +73,10 @@ class UserController {
     response,
     auth
   }) {
+    const jwt = auth.authenticator('jwt')
     try {
-      if (await auth.check())
-        return response.apiSuccess(await auth.logout())
+      if (await jwt.check())
+        return response.apiSuccess(await jwt.logout())
     } catch (error) {
       User.exceptions(error.message, error.status, error.code)
       return response.apiForbidden()
@@ -89,4 +84,4 @@ class UserController {
   }
 }
 
-module.exports = UserController
+module.exports = AuthsStudentsController

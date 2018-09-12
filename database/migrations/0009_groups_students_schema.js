@@ -10,7 +10,6 @@ class GroupsStudentsSchema extends Schema {
       table.string('description', 255)
       table.integer('user_id', 10).unsigned().references('id').inTable('users').onDelete('CASCADE').onUpdate('CASCADE')
       table.integer('max_students').notNullable().defaultTo(6).unsigned()
-      table.integer('translate_id', 10).notNullable().unsigned().references('id').inTable('translates').onDelete('CASCADE').onUpdate('CASCADE')
       table.timestamps()
     })
   }

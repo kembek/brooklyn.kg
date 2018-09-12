@@ -1,5 +1,6 @@
 'use strict'
 
+const Env = use('Env')
 module.exports = {
   /*
   |--------------------------------------------------------------------------
@@ -64,12 +65,12 @@ module.exports = {
   */
   jwt: {
     serializer: 'lucid',
-    model: 'Auths/User',
+    model: 'Auths/Students',
     scheme: 'jwt',
     uid: 'phone',
     password: 'password',
     options: {
-      secret: 'self::app.appKey'
+      secret: Env.get('APP_KEY')
     }
   }
 }

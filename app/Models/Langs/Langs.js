@@ -8,11 +8,11 @@ class Langs extends BasicSecond {
   }
 
   texts() {
-    return this.hasMany('Langs/Translates', 'lang_id_text', 'id')
+    return this.hasMany('Langs/Translates', 'id', 'lang_id_text')
   }
 
   translates() {
-    return this.hasMany('Langs/Translates', 'lang_id_translate', 'id')
+    return this.hasMany('Langs/Translates', 'id', 'lang_id_translate')
   }
 
 }

@@ -3,19 +3,19 @@
 
 
 "@adonisjs/ace@^5.0.1":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@adonisjs/ace/-/ace-5.0.4.tgz#c50cf4d02b71d5907ae0bef487a0b38d522dcfda"
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@adonisjs/ace/-/ace-5.0.5.tgz#e867cb101a6d69dc189a092661946c98f58703a8"
   dependencies:
     cli-table "^0.3.1"
-    commander "^2.16.0"
+    commander "^2.17.1"
     debug "^3.1.0"
     enquirer "^1.0.3"
     fast-levenshtein "^2.0.6"
     fs-extra "^7.0.0"
     is-arrow-function "^2.0.3"
-    kleur "^2.0.1"
+    kleur "^2.0.2"
     lodash "^4.17.10"
-    mustache "^2.3.0"
+    mustache "^2.3.2"
     prompt-checkbox "^2.2.0"
     prompt-confirm "^2.0.4"
     prompt-expand "^1.0.1"
@@ -212,9 +212,9 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/google-tag-manager/-/google-tag-manager-2.0.0.tgz#94052aecab59427ddf854689d635ea5782b0ba0b"
 
-"@nuxtjs/icon@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.4.0.tgz#a24a46ac80deb31efc9089c3bc4256759986d116"
+"@nuxtjs/icon@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.5.0.tgz#a5be9c80bde02f0e7159a16d6cd767ff20ee6434"
   dependencies:
     fs-extra "^7.0.0"
     hash-sum "^1.0.2"
@@ -238,10 +238,10 @@
     http-proxy-middleware "^0.18.0"
 
 "@nuxtjs/pwa@^2.0.8":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-2.4.0.tgz#7ee6bda501e7b768cd3fbac5a1d8bcac881e9de4"
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-2.5.0.tgz#deb97bca6f8afb23f9fcaa2695ebce03dd914873"
   dependencies:
-    "@nuxtjs/icon" "^2.4.0"
+    "@nuxtjs/icon" "^2.5.0"
     "@nuxtjs/manifest" "^2.4.0"
     "@nuxtjs/meta" "^2.4.0"
     "@nuxtjs/workbox" "^2.4.0"
@@ -281,8 +281,8 @@
     resetable "^1.0.2"
 
 "@types/node@^9.4.6":
-  version "9.6.30"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.30.tgz#1ecf83eaf7ac2d0dada7a9d61a1e4e7a6183ac06"
+  version "9.6.31"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.31.tgz#4d1722987f8d808b4c194dceb8c213bd92f028e5"
 
 "@types/vue-i18n@^7.0.0":
   version "7.0.0"
@@ -2062,9 +2062,13 @@ combined-stream@1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.17.x, commander@^2.11.0, commander@^2.13.0, commander@^2.15.1, commander@^2.16.0, commander@^2.7.1, commander@~2.17.1:
+commander@2.17.x, commander@^2.11.0, commander@^2.13.0, commander@^2.15.1, commander@^2.7.1, commander@~2.17.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
+
+commander@^2.17.1:
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
 
 commander@~2.13.0:
   version "2.13.0"
@@ -2270,21 +2274,14 @@ create-output-stream@0.0.1:
   dependencies:
     mkdirp "^0.5.1"
 
-cross-env@^3.1.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-3.2.4.tgz#9e0585f277864ed421ce756f81a980ff0d698aba"
-  dependencies:
-    cross-spawn "^5.1.0"
-    is-windows "^1.0.0"
-
-cross-env@^5.1.0:
+cross-env@^5.1.0, cross-env@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
   dependencies:
     cross-spawn "^6.0.5"
     is-windows "^1.0.0"
 
-cross-spawn@^5.0.1, cross-spawn@^5.1.0:
+cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
   dependencies:
@@ -3089,7 +3086,7 @@ eslint@^3.13.1:
 
 eslint@~3.10.2:
   version "3.10.2"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.10.2.tgz#c9a10e8bf6e9d65651204778c503341f1eac3ce7"
+  resolved "http://registry.npmjs.org/eslint/-/eslint-3.10.2.tgz#c9a10e8bf6e9d65651204778c503341f1eac3ce7"
   dependencies:
     babel-code-frame "^6.16.0"
     chalk "^1.1.3"
@@ -3714,8 +3711,10 @@ gauge@~2.7.3:
     wide-align "^1.1.0"
 
 generate-function@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/generate-function/-/generate-function-2.2.0.tgz#1aeac896147293d27bce65eb295ce5f3f094a292"
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/generate-function/-/generate-function-2.3.1.tgz#f069617690c10c868e73b8465746764f97c3479f"
+  dependencies:
+    is-property "^1.0.2"
 
 generate-object-property@^1.1.0:
   version "1.2.0"
@@ -4533,7 +4532,7 @@ is-promise@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-promise/-/is-promise-2.1.0.tgz#79a2a9ece7f096e80f36d2b2f3bc16c1ff4bf3fa"
 
-is-property@^1.0.0:
+is-property@^1.0.0, is-property@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-property/-/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
 
@@ -4835,7 +4834,7 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kleur@^2.0.1:
+kleur@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-2.0.2.tgz#b704f4944d95e255d038f0cb05fb8a602c55a300"
 
@@ -5406,7 +5405,7 @@ multiparty@^4.1.4:
     safe-buffer "5.1.2"
     uid-safe "2.1.5"
 
-mustache@^2.3.0, mustache@^2.3.1:
+mustache@^2.3.0, mustache@^2.3.1, mustache@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-2.3.2.tgz#a6d4d9c3f91d13359ab889a812954f9230a3d0c5"
 
@@ -5578,9 +5577,9 @@ node-res@^4.1.4:
     send "^0.16.1"
     vary "^1.1.2"
 
-nodemon@^1.18.3:
-  version "1.18.3"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.18.3.tgz#46e681ee0dd1b590562e03019b4c5df234f906f9"
+nodemon@^1.18.4:
+  version "1.18.4"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.18.4.tgz#873f65fdb53220eb166180cf106b1354ac5d714d"
   dependencies:
     chokidar "^2.0.2"
     debug "^3.1.0"
@@ -5675,8 +5674,8 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
 nuxt-i18n@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-5.2.1.tgz#59f9170d55d126ad1dc417d3fd433225d79291a7"
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-5.3.0.tgz#d6ae7d3840d604c24406210ce8244f3d42972ee4"
   dependencies:
     "@kazupon/vue-i18n-loader" "^0.3.0"
     acorn "^5.7.2"
@@ -8001,7 +8000,7 @@ stackframe@^1.0.4:
 
 standard-engine@~5.2.0:
   version "5.2.0"
-  resolved "https://registry.yarnpkg.com/standard-engine/-/standard-engine-5.2.0.tgz#400660ae5acce8afd4db60ff2214a9190ad790a3"
+  resolved "http://registry.npmjs.org/standard-engine/-/standard-engine-5.2.0.tgz#400660ae5acce8afd4db60ff2214a9190ad790a3"
   dependencies:
     deglob "^2.0.0"
     find-root "^1.0.0"
@@ -8278,8 +8277,8 @@ swagger-ui-dist@^3.14.1:
   resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-3.18.2.tgz#025f8838a135f9476a839dd37696ba3ebd86ea06"
 
 sweetalert2@^7.19.1:
-  version "7.26.12"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.26.12.tgz#1a679de3ddc0eda3b5466bfbfd32733d640c2d63"
+  version "7.26.28"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.26.28.tgz#6c6c8dae82b2febdcbce99ef834076d76fd2cc00"
 
 syntax-error@^1.1.4:
   version "1.4.0"
@@ -8289,7 +8288,7 @@ syntax-error@^1.1.4:
 
 table@^3.7.8:
   version "3.8.3"
-  resolved "https://registry.yarnpkg.com/table/-/table-3.8.3.tgz#2bbc542f0fda9861a755d3947fefd8b3f513855f"
+  resolved "http://registry.npmjs.org/table/-/table-3.8.3.tgz#2bbc542f0fda9861a755d3947fefd8b3f513855f"
   dependencies:
     ajv "^4.7.0"
     ajv-keywords "^1.0.0"
@@ -8454,7 +8453,7 @@ tryer@^1.0.0:
 
 ts-loader@^3.5.0:
   version "3.5.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-3.5.0.tgz#151d004dcddb4cf8e381a3bf9d6b74c2d957a9c0"
+  resolved "http://registry.npmjs.org/ts-loader/-/ts-loader-3.5.0.tgz#151d004dcddb4cf8e381a3bf9d6b74c2d957a9c0"
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^3.0.0"
@@ -8834,7 +8833,7 @@ vue-carousel@^0.7.2:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/vue-carousel/-/vue-carousel-0.7.3.tgz#5febab5bb3be4bd12ada37df22efd189f8789465"
 
-vue-class-component@^6.0.2:
+vue-class-component@^6.0.2, vue-class-component@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.2.0.tgz#7adb1daa9a868c75f30f97f33f4f1b94aee62089"
 
@@ -8965,8 +8964,8 @@ vue@^2.5.17:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
 vuetify@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.2.2.tgz#937fbc39cc1299a05d09b01653d8fc5e028e7a26"
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.2.3.tgz#519bab56c31420892912c0c7dbd23e790c9287bb"
 
 vuex-class@^0.3.0:
   version "0.3.1"
@@ -9055,7 +9054,7 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
 
 webpack@3.11.0:
   version "3.11.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.11.0.tgz#77da451b1d7b4b117adaf41a1a93b5742f24d894"
+  resolved "http://registry.npmjs.org/webpack/-/webpack-3.11.0.tgz#77da451b1d7b4b117adaf41a1a93b5742f24d894"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"

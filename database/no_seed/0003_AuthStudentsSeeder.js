@@ -1,7 +1,8 @@
 'use strict'
 
+const Hash = use('Hash')
 const Accesses = use('Auths/Accesses')
-const User = use('Auths/User')
+const User = use('Auths/Students')
 
 class LangsSeeder {
   async run() {
@@ -21,12 +22,12 @@ class LangsSeeder {
     await User.create({
       id: 1,
       access_id: 1,
-      phone: "996703906706",
-      password: "1234",
-      first_name: "Даниэль"
+      phone: "996771458987",
+      password: await Hash.make("1234"),
+      first_name: "Эвальд"
     })
 
-    console.log('Auth seeds done!')
+    console.log('Auth students seeds done!')
   }
 }
 
