@@ -21,7 +21,7 @@ class LangsController {
 
     try {
       const lang = await Langs.create(data)
-      return response.apiSuccess(lang)
+      return response.apiCreated(lang)
     } catch (error) {
       Langs.exceptions(error.message, error.status, error.code)
       return response.apiError();
@@ -39,7 +39,7 @@ class LangsController {
       const lang = await Langs.findOrFail(params.id)
       lang.merge(data)
       await lang.save()
-      return response.apiSuccess(lang)
+      return response.apiUpdated(lang)
     } catch (error) {
       Langs.exceptions(error.message, error.status, error.code)
       return response.apiError();

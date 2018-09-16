@@ -24,7 +24,7 @@
     "Auths": "./app/Models/Auths",
     "Langs": "./app/Models/Langs",
     "Students": "./app/Models/Students",
-    "Settings": "./app/Models/Settings"
+    "Site": "./app/Models/Site"
   },
   "dependencies": {
     "@adonisjs/ace": "^5.0.1",

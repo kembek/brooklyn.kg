@@ -9,7 +9,7 @@ class Menu extends BasicSecond {
     }
 
     parent() {
-        return this.belongsTo('Settings/Menu', 'parent_id', 'id')
+        return this.belongsTo('Site/Menu', 'parent_id', 'id')
     }
 
 }
